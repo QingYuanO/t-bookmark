@@ -11,7 +11,7 @@ const color = ['text-yellow-400'];
 export default function Home() {
   return (
     <main className="flex flex-col items-center space-y-16 py-20">
-      <Spotlight className="-top-40 left-0 md:-top-32 md:left-40" fill="#fffbeb" />
+      <Spotlight className="-top-40 left-0 lg:-top-32 lg:left-72" fill="#fffbeb" />
       <div className="flex flex-col items-center justify-center px-4">
         <div className="relative z-10 flex bg-gradient-to-b from-slate-200 to-slate-600 bg-clip-text text-center font-sans text-lg font-bold text-transparent sm:text-4xl">
           将书签转换为
