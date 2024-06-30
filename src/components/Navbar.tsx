@@ -20,9 +20,9 @@ export default async function Navbar() {
             <Button variant="ghost" size="icon">
               <a href="https://github.com/QingYuanO/transform-bookmark" target="_blank" className="i-lucide-github text-xl text-foreground"></a>
             </Button>
-            <Button variant="ghost" size="icon">
+            {/* <Button variant="ghost" size="icon">
               <i className="i-lucide-contact text-xl text-foreground"></i>
-            </Button>
+            </Button> */}
           </div>
         </div>
       </MaxWidthWrap>
