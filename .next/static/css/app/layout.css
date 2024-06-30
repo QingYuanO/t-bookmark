@@ -1152,6 +1152,11 @@ video {
   margin-top: calc(4rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(4rem * var(--tw-space-y-reverse));
 }
+.space-y-20 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(5rem * var(--tw-space-y-reverse));
+}
 .divide-x > :not([hidden]) ~ :not([hidden]) {
   --tw-divide-x-reverse: 0;
   border-right-width: calc(1px * var(--tw-divide-x-reverse));
@@ -1217,8 +1222,15 @@ video {
 .bg-transparent {
   background-color: transparent;
 }
+.bg-slate-950 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(2 6 23 / var(--tw-bg-opacity));
+}
 .bg-gradient-to-b {
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
+}
+.bg-\[linear-gradient\(to_right\2c \#4f4f4f2e_1px\2c transparent_1px\)\2c linear-gradient\(to_bottom\2c \#4f4f4f2e_1px\2c transparent_1px\)\] {
+  background-image: linear-gradient(to right,#4f4f4f2e 1px,transparent 1px),linear-gradient(to bottom,#4f4f4f2e 1px,transparent 1px);
 }
 .from-slate-200 {
   --tw-gradient-from: #e2e8f0 var(--tw-gradient-from-position);
@@ -1227,6 +1239,9 @@ video {
 }
 .to-slate-600 {
   --tw-gradient-to: #475569 var(--tw-gradient-to-position);
+}
+.bg-\[size\:14px_24px\] {
+  background-size: 14px 24px;
 }
 .bg-clip-text {
   -webkit-background-clip: text;
@@ -1438,6 +1453,10 @@ video {
 }
 .duration-100 {
   animation-duration: 100ms;
+}
+.\[mask-image\:radial-gradient\(ellipse_60\%_50\%_at_50\%_0\%\2c \#000_70\%\2c transparent_100\%\)\] {
+  -webkit-mask-image: radial-gradient(ellipse 60% 50% at 50% 0%,#000 70%,transparent 100%);
+          mask-image: radial-gradient(ellipse 60% 50% at 50% 0%,#000 70%,transparent 100%);
 }
 .\[mask-repeat\:no-repeat\] {
   -webkit-mask-repeat: no-repeat;
@@ -1708,6 +1727,34 @@ video {
     left: 15rem;
   }
 
+  .md\:left-80 {
+    left: 20rem;
+  }
+
+  .md\:top-20 {
+    top: 5rem;
+  }
+
+  .md\:left-96 {
+    left: 24rem;
+  }
+
+  .md\:left-\[28rem\] {
+    left: 28rem;
+  }
+
+  .md\:-top-32 {
+    top: -8rem;
+  }
+
+  .md\:left-32 {
+    left: 8rem;
+  }
+
+  .md\:left-40 {
+    left: 10rem;
+  }
+
   .md\:max-w-\[420px\] {
     max-width: 420px;
   }
@@ -1722,6 +1769,14 @@ video {
 
   .lg\:w-\[84\%\] {
     width: 84%;
+  }
+
+  .lg\:w-\[70\%\] {
+    width: 70%;
+  }
+
+  .lg\:w-\[80\%\] {
+    width: 80%;
   }
 }
 

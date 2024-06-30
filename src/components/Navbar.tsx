@@ -6,7 +6,7 @@ import { Button, buttonVariants } from './ui/button';
 
 export default async function Navbar() {
   return (
-    <nav className="sticky inset-x-0 top-0 z-10 h-14 w-full border-b border-border bg-background/40 transition-all">
+    <nav className="sticky inset-x-0 top-0 z-10 h-14 w-full transition-all">
       <MaxWidthWrap>
         <div className="flex h-14 items-center justify-between">
           <Link
@@ -18,7 +18,7 @@ export default async function Navbar() {
 
           <div className="flex items-center space-x-1">
             <Button variant="ghost" size="icon">
-              <i className="i-lucide-github text-xl text-foreground"></i>
+              <a href="https://github.com/qingyuan/transform-bookmark" className="i-lucide-github text-xl text-foreground"></a>
             </Button>
             <Button variant="ghost" size="icon">
               <i className="i-lucide-contact text-xl text-foreground"></i>
