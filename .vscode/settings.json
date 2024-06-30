@@ -1,0 +1,39 @@
+{
+  "tailwindCSS.experimental.classRegex": [
+    ["styled\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+    ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+    ["{([\\s\\S]*)}", ":\\s*['\"`]([^'\"`]*)['\"`]"],
+    "Style\\s*=\\s*['\"`]([^'\"`]*)['\"`]",
+    "ClassName\\s*=\\s*['\"`]([^'\"`]*)['\"`]",
+    "Class\\s*=\\s*['\"`]([^'\"`]*)['\"`]",
+    "twc\\.[^`]+`([^`]*)`",
+    "twc\\(.*?\\).*?`([^)]*)",
+    ["twc\\.[^`]+\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"],
+    ["twc\\(.*?\\).*?\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"],
+    "twx\\(.*?\\).*?`([^)]*)",
+    ["twx\\.[^`]+\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"],
+    ["twx\\(.*?\\).*?\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"],
+  ],
+  "cssvar.files": [],
+
+  // Do not ignore node_modules css files, which is ignored by default
+  "cssvar.ignore": [],
+
+  // add support for autocomplete in JS or JS like files
+  "cssvar.extensions": ["css", "postcss", "jsx", "tsx"],
+  "editor.quickSuggestions": {
+    "strings": "on"
+  },
+  "cSpell.ignoreWords": [
+    "tmui",
+    "nuxt",
+    "antd",
+    "tailwindcss",
+    "zustand",
+    "immer",
+    "weapp",
+    "tarojs",
+    "fnames"
+  ],
+
+}
