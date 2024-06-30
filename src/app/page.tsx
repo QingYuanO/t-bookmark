@@ -19,14 +19,14 @@ export default function Home() {
     <main className="z-10 flex flex-col items-center space-y-10 pb-4 pt-6 sm:space-y-12 sm:pt-16">
       <Spotlight className="-top-40 left-0 lg:-top-32 lg:left-72" fill="#fffbeb" />
       <div className="flex flex-col items-center justify-center px-4">
-        <div className="relative z-10 flex bg-gradient-to-b from-slate-200 to-slate-600 bg-clip-text text-center font-sans text-lg font-bold text-transparent sm:text-4xl">
+        <div className="relative z-10 flex bg-gradient-to-b from-slate-200 to-slate-600 bg-clip-text text-center font-sans text-xl font-bold text-transparent sm:text-4xl">
           将书签转换为
-          <span className="inline-block w-[70px] text-center sm:min-w-32">
+          <span className="inline-block min-w-[75px] text-center sm:min-w-32">
             <FlipWords words={words} wordColors={color} />
           </span>
           从未如此简单
         </div>
-        <p className="relative z-10 mx-auto my-2 max-w-lg text-center text-slate-500">
+        <p className="relative z-10 mx-auto my-2 max-w-lg text-center text-xs text-slate-500 sm:text-sm">
           打开 Chrome 浏览器，在地址栏输入 chrome://bookmarks/ 并按回车键，在页面右上角，点击菜单，选择
           导出书签，将书签文件保存到您的电脑上，然后上传到网站。
         </p>
