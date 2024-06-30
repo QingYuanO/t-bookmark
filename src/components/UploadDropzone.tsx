@@ -2,22 +2,26 @@
 
 import React from 'react';
 import Dropzone from 'react-dropzone';
-import handleFileUpload from '@/lib/parseBookmarks';
+import handleFileUpload, { Bookmark } from '@/lib/parseBookmarks';
 
-const UploadDropzone = () => {
+const UploadDropzone = ({ success }: { success?: (data: Bookmark[]) => void }) => {
   return (
     <Dropzone
       multiple={false}
+      accept={{
+        'text/html': ['.html'],
+      }}
       onDrop={async acceptedFiles => {
         const file = acceptedFiles[0];
-        handleFileUpload(file);
+        const data = await handleFileUpload(file);
+        success?.(data);
       }}
     >
       {({ getRootProps, getInputProps, acceptedFiles }) => {
         return (
           <div
             {...getRootProps()}
-            className="z-10 m-4 h-32 w-2/3 rounded-lg border border-dashed border-border bg-background/40 duration-100 hover:bg-secondary/40 sm:h-64 sm:w-96"
+            className="z-10 box-border flex w-screen rounded-lg border border-dashed border-border bg-background/40 duration-100 hover:bg-secondary/40 sm:h-64 sm:w-96"
           >
             <div className="flex h-full w-full items-center justify-center">
               <label htmlFor="dropzone-file" className="flex size-full cursor-pointer flex-col items-center justify-center rounded-lg p-8">

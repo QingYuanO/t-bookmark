@@ -1,16 +1,22 @@
+'use client';
+
+import { useState } from 'react';
+import { Bookmark } from '@/lib/parseBookmarks';
+
+import DownloadJson from '@/components/DownloadJson';
+import DownloadXlsx from '@/components/DownloadXlsx';
 import { FlipWords } from '@/components/FlipWords';
+import GenerateSite from '@/components/GenerateSite';
 import { Spotlight } from '@/components/Spotlight';
 import UploadDropzone from '@/components/UploadDropzone';
 
-// const words = ['JSON', 'Excel', 'PDF'];
-// const color = ['text-yellow-400', 'text-green-400', 'text-red-400'];
-
-const words = ['JSON'];
-const color = ['text-yellow-400'];
+const words = ['JSON', 'Xlsx', '导航站'];
+const color = ['text-yellow-400', 'text-green-400', 'text-slate-300'];
 
 export default function Home() {
+  const [bookmarks, setBookmarks] = useState<Bookmark[]>();
   return (
-    <main className="flex flex-col items-center space-y-16 py-20">
+    <main className="z-10 flex flex-col items-center space-y-10 pb-4 pt-6 sm:space-y-12 sm:pt-16">
       <Spotlight className="-top-40 left-0 lg:-top-32 lg:left-72" fill="#fffbeb" />
       <div className="flex flex-col items-center justify-center px-4">
         <div className="relative z-10 flex bg-gradient-to-b from-slate-200 to-slate-600 bg-clip-text text-center font-sans text-lg font-bold text-transparent sm:text-4xl">
@@ -26,7 +32,16 @@ export default function Home() {
         </p>
       </div>
 
-      <UploadDropzone />
+      <UploadDropzone success={data => setBookmarks(data)} />
+
+      {bookmarks && (
+        <div className="flex flex-col items-center space-y-2 self-stretch px-2">
+          <DownloadJson data={bookmarks} />
+          <DownloadXlsx data={bookmarks} />
+          <GenerateSite data={bookmarks} />
+        </div>
+      )}
+
       <div className="relative size-full bg-slate-950">
         <div className="fixed inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
       </div>
