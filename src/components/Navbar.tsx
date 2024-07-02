@@ -13,7 +13,7 @@ export default async function Navbar() {
             href="/"
             className="relative z-10 flex bg-gradient-to-b from-slate-200 to-slate-600 bg-clip-text text-center font-sans font-bold text-transparent"
           >
-            TransformBookmark
+            TBookmark
           </Link>
 
           <div className="flex items-center space-x-1">
