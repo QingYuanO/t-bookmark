@@ -6,7 +6,7 @@ import { Button, buttonVariants } from './ui/button';
 
 export default async function Navbar() {
   return (
-    <nav className="sticky inset-x-0 top-0 z-20 h-14 w-full bg-background/30 backdrop-blur transition-all">
+    <nav className="sticky inset-x-0 top-0 z-20 h-14 w-full bg-slate-950/10 backdrop-blur transition-all">
       <MaxWidthWrap>
         <div className="flex h-14 items-center justify-between">
           <Link

@@ -10,7 +10,7 @@ import GenerateSite from '@/components/GenerateSite';
 import { Spotlight } from '@/components/Spotlight';
 import UploadDropzone from '@/components/UploadDropzone';
 
-const words = ['JSON', 'Xlsx', '导航站'];
+const words = ['JSON', 'XLSX', '导航站'];
 const color = ['text-yellow-400', 'text-green-400', 'text-slate-300'];
 
 export default function Home() {
