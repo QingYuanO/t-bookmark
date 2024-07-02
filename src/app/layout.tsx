@@ -9,7 +9,7 @@ import './globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'TransformBookmark',
+  title: 'TBookmark',
   description: 'Convert your bookmarks to JSON, Excel, PDF.',
 };
 
@@ -19,7 +19,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={`${inter.className} dark min-h-screen bg-background text-foreground`}>
         <Navbar />
         {children}
-        {/* <BackgroundBeams /> */}
       </body>
     </html>
   );
