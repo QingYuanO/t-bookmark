@@ -71,7 +71,6 @@ function parseBookmarks(htmlString: string) {
 
   const bookmarks = parseDL(rootDL);
   const personalToolbarFolder = bookmarks.find(item => item.isPersonalToolbarFolder)?.children ?? [];
-  console.log(personalToolbarFolder);
 
   return personalToolbarFolder;
 }
