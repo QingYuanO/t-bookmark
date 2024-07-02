@@ -3,10 +3,12 @@ import * as XLSX from 'xlsx';
 import { toast } from '@/components/ui/use-toast';
 
 export type Bookmark = {
+  id: string;
   type: 'folder' | 'bookmark';
   name: string;
   url?: string;
   icon?: string;
+  isPersonalToolbarFolder?: boolean;
   children?: Bookmark[];
 };
 
@@ -25,9 +27,13 @@ function parseBookmarks(htmlString: string) {
         const a = child.querySelector('a');
 
         if (h3) {
+          const isPersonalToolbarFolder = h3.getAttribute('personal_toolbar_folder') === 'true';
+          const id = (h3.getAttribute('last_modified') ?? '') + i;
           const folder: Bookmark = {
+            id,
             type: 'folder',
             name: h3.textContent ?? '',
+            isPersonalToolbarFolder,
             children: [],
           };
 
@@ -38,7 +44,9 @@ function parseBookmarks(htmlString: string) {
           }
           bookmarks.push(folder);
         } else if (a) {
+          const id = (a.getAttribute('add_date') ?? '') + i;
           bookmarks.push({
+            id,
             type: 'bookmark',
             name: a.textContent ?? '',
             url: a.href,
@@ -62,7 +70,10 @@ function parseBookmarks(htmlString: string) {
   }
 
   const bookmarks = parseDL(rootDL);
-  return bookmarks;
+  const personalToolbarFolder = bookmarks.find(item => item.isPersonalToolbarFolder)?.children ?? [];
+  console.log(personalToolbarFolder);
+
+  return personalToolbarFolder;
 }
 
 // 示例：读取文件并解析
