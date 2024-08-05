@@ -2,19 +2,23 @@
 
 import React from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { Bookmark, convertToExcel } from '@/lib/parseBookmarks';
 
 import { Button } from './ui/button';
 
-export default function GenerateSite(props: { data: Bookmark[] }) {
-  const { data } = props;
+export default function GenerateSite() {
+  const router = useRouter();
   return (
     <div className="z-10 flex w-full items-center justify-between rounded-lg border border-border bg-background/40 p-4 sm:w-96">
       <span>生成导航站</span>
-      <Button variant="link" asChild>
-        <Link href="https://github.com/QingYuanO/n-bookmark" target="_blank">
-          立即拥有
-        </Link>
+      <Button
+        variant="link"
+        onClick={() => {
+          router.push('https://github.com/QingYuanO/n-bookmark');
+        }}
+      >
+        立即拥有
       </Button>
     </div>
   );

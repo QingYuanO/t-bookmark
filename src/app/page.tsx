@@ -38,7 +38,7 @@ export default function Home() {
         <div className="flex flex-col items-center space-y-2 self-stretch px-2">
           <DownloadJson data={bookmarks} />
           <DownloadXlsx data={bookmarks} />
-          <GenerateSite data={bookmarks} />
+          <GenerateSite />
         </div>
       )}
 
