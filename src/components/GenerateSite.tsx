@@ -12,13 +12,8 @@ export default function GenerateSite() {
   return (
     <div className="z-10 flex w-full items-center justify-between rounded-lg border border-border bg-background/40 p-4 sm:w-96">
       <span>生成导航站</span>
-      <Button
-        variant="link"
-        onClick={() => {
-          router.push('https://github.com/QingYuanO/n-bookmark');
-        }}
-      >
-        立即拥有
+      <Button variant="link" asChild>
+        <Link href="https://github.com/QingYuanO/n-bookmark" target='_blank'>立即拥有</Link>
       </Button>
     </div>
   );

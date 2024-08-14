@@ -41,7 +41,7 @@ const UploadDropzone = ({ success }: { success?: (data: Bookmark[]) => void }) =
                   </div>
                 ) : null}
 
-                <input type="file" id="dropzone-file" className="hidden" {...getInputProps()} />
+                {/* <input type="file" id="dropzone-file" className="hidden" {...getInputProps()} /> */}
               </label>
             </div>
           </div>
